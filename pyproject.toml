@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "structobj"
+version = "0.0.1"
+description = "Conversion between data structures and object strutures"
+authors = ["flokapi <flokapi@pm.me>"]
+license = "MIT"
+readme = "README.md"
+
+packages = [
+    { include = "structobj", from = "src" },
+]
+
+[tool.poetry.urls]
+homepage = "https://github.com/flokapi/structobj"
+repository = "https://github.com/flokapi/structobj"
+documentation = "https://github.com/flokapi/structobj"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pytest = "^7.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+float_to_top = true
