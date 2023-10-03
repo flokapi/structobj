@@ -1,6 +1,6 @@
 # About
 
-This simple modules provides conversion between data structures and objects structures.
+This simple Python package provides conversion between data structures and objects structures.
 
 
 
@@ -10,7 +10,8 @@ This is allows to get the advantage of both:
     - Convenient to save the state and share in an explicit format such as json format.
     - Convenient to generate.
 - object structures:
-    - Provide methods to the objects.  Convenient to perform operations relative to an object.
+    - Provide methods to the objects. 
+    - Convenient to perform operations relative to an object.
 
 
 
@@ -31,15 +32,34 @@ Objects are represented by a dictionary containing the special `_obj` key and th
 The set of objects which can be created
 
 - must be registered using the `@structobj.register` decorator.
-- must inherit the `structobj.StructObj` class
+- must inherit the `structobj.StructObj` class.
+- must have a `data` parameter in the constructor and use it to initialize the parent class.
+
+```python
+@so.register
+class Earth(so.StructObj):
+    def __init__(self, data):
+        super().__init__(data)
+        print('New earth')
+```
 
 
 
-The object structure can be created using the `structobj.make_obj_struct(data)` function.
+The object structure can be created using the `structobj.make_obj_struct()` function.
+
+```python
+obj_struct = so.make_obj_struct(data_struct)
+```
 
 
 
-The data structure of an object structure can be accessed using the  `obj.get_data()` method.
+The data structure of an object structure can be accessed using the  `.get_data()` method.
+
+```python
+obj_struct.get_data()
+```
+
+
 
 
 
